@@ -6,7 +6,7 @@ part of 'w_floating_danggeun_button.riverpod.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$floatingButtonHash() => r'1b42d3c862cbc9061fc055e86b0ea20650de6b44';
+String _$floatingButtonHash() => r'5ca71b147f0b1fb8af73ec2be3a9910357c6ad3e';
 
 /// See also [FloatingButton].
 @ProviderFor(FloatingButton)

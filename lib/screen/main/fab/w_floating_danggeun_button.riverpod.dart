@@ -12,7 +12,7 @@ class FloatingButton extends _$FloatingButton {
 
   bool needToMakeButtonBigger = false;
 
-  void onTapButton() {
+  void toggleMenu() {
     //초기상태 저장
     final isExpanded = state.isExpanded;
     final isBig = state.isBig;

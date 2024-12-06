@@ -3,12 +3,14 @@ import 'package:fast_app_base/common/dart/extension/num_duration_extension.dart'
 import 'package:fast_app_base/common/widget/animated_width_collapse.dart';
 import 'package:fast_app_base/screen/main/fab/w_floating_danggeun_button.riverpod.dart';
 import 'package:fast_app_base/screen/main/s_main.dart';
+import 'package:fast_app_base/screen/main/tab/tab_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class FloatingDanggeunButton extends ConsumerWidget {
   FloatingDanggeunButton({super.key});
   final duration = 300.ms;
+  static const height = 100.0;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -66,8 +68,18 @@ class FloatingDanggeunButton extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(50),
                 ),
                 child: Tap(
-                  onTap: () =>
-                      ref.read(floatingButtonProvider.notifier).onTapButton(),
+                  onTap: () {
+                    final currentTab = ref.watch(currentTabProvider);
+                    debugPrint(currentTab.tabName);
+                    switch (currentTab) {
+                      case TabItem.home:
+                      case TabItem.localLife:
+                      case TabItem.nearMe:
+                      case TabItem.chat:
+                      case TabItem.my:
+                    }
+                    ref.read(floatingButtonProvider.notifier).toggleMenu();
+                  },
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
