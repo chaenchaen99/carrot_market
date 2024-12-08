@@ -3,6 +3,7 @@ import 'package:fast_app_base/entity/dummies.dart';
 import 'package:fast_app_base/screen/main/fab/w_floating_danggeunButton.dart';
 import 'package:fast_app_base/screen/main/fab/w_floating_danggeun_button.riverpod.dart';
 import 'package:fast_app_base/screen/main/tab/home/w_product_post_item.dart';
+import 'package:fast_app_base/screen/notification/s_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -32,7 +33,9 @@ class _HomeFragmentState extends ConsumerState<HomeFragment> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     return Column(
       children: [
         AppBar(
@@ -51,6 +54,14 @@ class _HomeFragmentState extends ConsumerState<HomeFragment> {
                 .toList(),
             child: title.text.make(),
           ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                Nav.push(const NotificationScreen());
+              },
+              icon: const Icon(Icons.notifications_none_rounded),
+            ),
+          ],
         ),
         Expanded(
           child: ListView.separated(
